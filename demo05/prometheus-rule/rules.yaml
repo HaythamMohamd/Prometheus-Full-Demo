@@ -1,0 +1,13 @@
+  groups:
+  - name: NodeJs App
+    rules:
+      - record: job:up
+        expr: up{job="NodeJs App"}
+
+      - alert: NodeJsAppDown
+        expr: job:up == 0
+  - name: NodeExpoter
+    rules:
+      - record: cpu:seconds
+        expr: node_cpu_seconds_total{job="NodeExporter"}
+
