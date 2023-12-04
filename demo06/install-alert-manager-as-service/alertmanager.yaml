@@ -1,0 +1,14 @@
+global:
+route:
+  receiver: 'slack'
+  group_by: ['alertname']
+  group_wait: 10s
+  group_interval: 15s
+
+receivers:
+- name: 'slack'
+  slack_configs:
+  - channel: "#udapeople-cicd"
+    send_resolved: true
+    api_url: 'https://hooks.slack.com/services/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'
+
